@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Page</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        header {
+            background: #ca7171;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(146, 132, 132, 0.2);
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: rgb(126, 17, 165);
+            font-weight: bold;
+        }
+        .auth {
+            float: right;
+            margin-top: -30px;
+        }
+        form {
+            display: none; 
+            text-align: left;
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            margin: auto;
+        }
+        input, button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 8px;
+        }
+        button {
+            background: rgb(14, 14, 224);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+ 
+    <header>
+        <h1>Welcome to Hostel Page</h1>
+        <nav>
+            <a href="#">Home</a> | 
+            <a href="#">About</a> | 
+            <a href="#">Contact</a>
+        </nav>
+        <div class="auth">
+            <button onclick="showSignup()">Log In</button>
+        </div>
+    </header>
+
+  
+    <div id="signupForm">
+        <h2>Create an Account</h2>
+        <form>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <input type="checkbox" id="checkbox" onchange="enable_button()"> 
+            I agree to the <a href="#">Terms and Conditions</a>
+
+            <button type="submit" id="btn" disabled>Create Account</button>
+        </form>
+    </div>
+
+    <script>
+        function showSignup() {
+            document.getElementById("signupForm").querySelector("form").style.display = "block";
+        }
+
+        function enable_button() {
+            document.getElementById("btn").disabled = !document.getElementById("checkbox").checked;
+        }
+    </script>
+
+</body>
+</html>
